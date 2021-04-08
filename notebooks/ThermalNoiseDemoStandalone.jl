@@ -14,10 +14,35 @@ macro bind(def, element)
 end
 
 # ╔═╡ c5002144-216c-447f-a7e1-054584ce14d8
-begin # Package Dependencies
-	using PlutoUI: Slider, NumberField
-	using Plots: plot, plot!
-	using SpecialFunctions: besselj
+begin
+	try
+		using PlutoUI: Slider, NumberField
+	catch
+		using Pkg
+		Pkg.add("PlutoUI")
+		using PlutoUI: Slider, NumberField
+	end
+	
+	try
+		using Plots: plot, plot!
+	catch
+		using Pkg
+		Pkg.add("Plots")
+		using Plots: plot, plot!
+	end
+	
+	
+	try
+		using SpecialFunctions: besselj
+	catch
+		using Pkg
+		Pkg.add("SpecialFunctions")
+		using SpecialFunctions: besselj
+	end
+	
+	md"""
+	Please wait while Julia installs packages (not local to your computer, but in the online environment it's being run in).
+	"""
 end
 
 # ╔═╡ d3432db0-9821-11eb-2073-cdfe156fcf9b
@@ -32,9 +57,11 @@ md"""
 [Readhead, M. L. (2014, October). Is underwater thermal noise useful?. In _Inter-Noise and Noise-Con Congress and Conference Proceedings_ (Vol. 249, No. 2, pp. 4978-4983). Institute of Noise Control Engineering.](https://www.acoustics.asn.au/conference_proceedings/INTERNOISE2014/papers/p757.pdf)
 """
 
+# ╔═╡ bb39ff2c-5896-436c-a1f4-e69a03483d5f
+md"## Implementation"
+
 # ╔═╡ 9b428e83-955a-4a99-9d9d-cd669c8b8834
 md"""
-## Implementation
 For each thermal noise equation implementation below, their respective inputs are consistently:
 * `T` temperature [K]
 * `ρ` density [kg/m³]
@@ -146,6 +173,8 @@ end
 # ╔═╡ Cell order:
 # ╟─d3432db0-9821-11eb-2073-cdfe156fcf9b
 # ╟─f200e91f-ec2b-488d-9125-47e58ec4b0d8
+# ╟─bb39ff2c-5896-436c-a1f4-e69a03483d5f
+# ╟─c5002144-216c-447f-a7e1-054584ce14d8
 # ╟─9b428e83-955a-4a99-9d9d-cd669c8b8834
 # ╠═ddb99148-700d-4485-8acc-cbb9e940328a
 # ╠═ce811de3-8bc5-43d9-8545-cd11470ac211
@@ -165,7 +194,6 @@ end
 # ╟─b69f726f-6c25-49f6-851e-f5a78a9df01e
 # ╠═386c1210-9731-4382-bc54-12daba3df21e
 # ╠═25e018ca-2dbe-421b-966f-94a1a4e24e22
-# ╟─c5002144-216c-447f-a7e1-054584ce14d8
 # ╟─852fd43b-0052-4163-b1a8-fd840eb48d66
 # ╟─f9b8892c-c086-489d-9f70-b00c220ae782
 # ╟─7d876c26-74dd-4f6a-b22c-a1562998e320
