@@ -39,10 +39,6 @@ begin
 		Pkg.add("SpecialFunctions")
 		using SpecialFunctions: besselj
 	end
-	
-	md"""
-	Please wait while Julia installs packages (not local to your computer, but in the online environment it's being run in).
-	"""
 end
 
 # ╔═╡ d3432db0-9821-11eb-2073-cdfe156fcf9b
@@ -59,6 +55,11 @@ md"""
 
 # ╔═╡ bb39ff2c-5896-436c-a1f4-e69a03483d5f
 md"## Implementation"
+
+# ╔═╡ 77542a59-ae78-4f70-8724-9ec5b2552e14
+md"""
+__Please wait while Julia installs packages (not local to your computer, but in the online environment it's being run in).__
+"""
 
 # ╔═╡ 9b428e83-955a-4a99-9d9d-cd669c8b8834
 md"""
@@ -174,7 +175,7 @@ end
 # ╟─d3432db0-9821-11eb-2073-cdfe156fcf9b
 # ╟─f200e91f-ec2b-488d-9125-47e58ec4b0d8
 # ╟─bb39ff2c-5896-436c-a1f4-e69a03483d5f
-# ╟─c5002144-216c-447f-a7e1-054584ce14d8
+# ╟─77542a59-ae78-4f70-8724-9ec5b2552e14
 # ╟─9b428e83-955a-4a99-9d9d-cd669c8b8834
 # ╠═ddb99148-700d-4485-8acc-cbb9e940328a
 # ╠═ce811de3-8bc5-43d9-8545-cd11470ac211
@@ -194,6 +195,7 @@ end
 # ╟─b69f726f-6c25-49f6-851e-f5a78a9df01e
 # ╠═386c1210-9731-4382-bc54-12daba3df21e
 # ╠═25e018ca-2dbe-421b-966f-94a1a4e24e22
+# ╟─c5002144-216c-447f-a7e1-054584ce14d8
 # ╟─852fd43b-0052-4163-b1a8-fd840eb48d66
 # ╟─f9b8892c-c086-489d-9f70-b00c220ae782
 # ╟─7d876c26-74dd-4f6a-b22c-a1562998e320
