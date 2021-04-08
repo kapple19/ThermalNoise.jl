@@ -16,11 +16,11 @@ end
 # ╔═╡ c5002144-216c-447f-a7e1-054584ce14d8
 begin
 	try
-		using PlutoUI: Slider, NumberField
+		using PlutoUI
 	catch
 		using Pkg
 		Pkg.add("PlutoUI")
-		using PlutoUI: Slider, NumberField
+		using PlutoUI
 	end
 	
 	try
@@ -46,6 +46,9 @@ md"""
 # Thermal Noise
 This Pluto live script utilizes a Julia implementation of three equations for thermal noise reviewed by [[Readhead 2014](https://www.acoustics.asn.au/conference_proceedings/INTERNOISE2014/papers/p757.pdf)].
 """
+
+# ╔═╡ 965db134-2559-4c00-ad35-b23bd65dea5f
+PlutoUI.TableOfContents(title = "Table of Contents", indent = true)
 
 # ╔═╡ f200e91f-ec2b-488d-9125-47e58ec4b0d8
 md"""
@@ -173,6 +176,7 @@ end
 
 # ╔═╡ Cell order:
 # ╟─d3432db0-9821-11eb-2073-cdfe156fcf9b
+# ╟─965db134-2559-4c00-ad35-b23bd65dea5f
 # ╟─f200e91f-ec2b-488d-9125-47e58ec4b0d8
 # ╟─bb39ff2c-5896-436c-a1f4-e69a03483d5f
 # ╟─77542a59-ae78-4f70-8724-9ec5b2552e14
