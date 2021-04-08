@@ -47,6 +47,11 @@ md"""
 This Pluto live script utilizes a Julia implementation of three equations for thermal noise reviewed by [[Readhead 2014](https://www.acoustics.asn.au/conference_proceedings/INTERNOISE2014/papers/p757.pdf)].
 """
 
+# ╔═╡ 77542a59-ae78-4f70-8724-9ec5b2552e14
+md"""
+__Please wait while Julia installs packages (not local to your computer, but in the online environment it's being run in). This may take a minute.__
+"""
+
 # ╔═╡ 965db134-2559-4c00-ad35-b23bd65dea5f
 PlutoUI.TableOfContents(title = "Table of Contents", indent = true)
 
@@ -58,11 +63,6 @@ md"""
 
 # ╔═╡ bb39ff2c-5896-436c-a1f4-e69a03483d5f
 md"## Implementation"
-
-# ╔═╡ 77542a59-ae78-4f70-8724-9ec5b2552e14
-md"""
-__Please wait while Julia installs packages (not local to your computer, but in the online environment it's being run in).__
-"""
 
 # ╔═╡ 9b428e83-955a-4a99-9d9d-cd669c8b8834
 md"""
@@ -176,10 +176,10 @@ end
 
 # ╔═╡ Cell order:
 # ╟─d3432db0-9821-11eb-2073-cdfe156fcf9b
+# ╟─77542a59-ae78-4f70-8724-9ec5b2552e14
 # ╟─965db134-2559-4c00-ad35-b23bd65dea5f
 # ╟─f200e91f-ec2b-488d-9125-47e58ec4b0d8
 # ╟─bb39ff2c-5896-436c-a1f4-e69a03483d5f
-# ╟─77542a59-ae78-4f70-8724-9ec5b2552e14
 # ╟─9b428e83-955a-4a99-9d9d-cd669c8b8834
 # ╠═ddb99148-700d-4485-8acc-cbb9e940328a
 # ╠═ce811de3-8bc5-43d9-8545-cd11470ac211
