@@ -24,7 +24,7 @@ end
 # ╔═╡ b9373760-0139-495c-9405-3592ee260458
 md"""
 # Thermal Noise
-This Pluto live script utilizes a Julia implementation of three equations for thermal noise reviewed by [Readhead 2014].
+This Pluto live script utilizes a Julia implementation of three equations for thermal noise reviewed by [[Readhead 2014](https://www.acoustics.asn.au/conference_proceedings/INTERNOISE2014/papers/p757.pdf)].
 
 ## References
 [Readhead, M. L. (2014, October). Is underwater thermal noise useful?. In _Inter-Noise and Noise-Con Congress and Conference Proceedings_ (Vol. 249, No. 2, pp. 4978-4983). Institute of Noise Control Engineering.](https://www.acoustics.asn.au/conference_proceedings/INTERNOISE2014/papers/p757.pdf)

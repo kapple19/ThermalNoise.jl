@@ -1,3 +1,10 @@
+"""
+`ThermalNoise`
+
+Simple implementation of thermal noise level equations reviewed by [Readhead 2014].
+
+Readhead, M. L. (2014, October). Is underwater thermal noise useful?. In Inter-Noise and Noise-Con Congress and Conference Proceedings (Vol. 249, No. 2, pp. 4978-4983). Institute of Noise Control Engineering.
+"""
 module ThermalNoise
 import SpecialFunctions: besselj
 
@@ -16,8 +23,6 @@ Thermal noise level for a piston, derived by Mellen [Readhead 2014], with
 * `c`  Sound Speed [m/s]
 * `f`  Frequency [Hz]
 * `df` Frequency Interval Size [Hz]
-
-Readhead, M. L. (2014, October). Is underwater thermal noise useful?. In Inter-Noise and Noise-Con Congress and Conference Proceedings (Vol. 249, No. 2, pp. 4978-4983). Institute of Noise Control Engineering.
 """
 function point(
   T::Real, # Temperature [K]
@@ -39,8 +44,6 @@ Thermal noise level averaged over the surface of a sphere, with
 * `f`  frequency [Hz]
 * `df` frequency interval size [Hz]
 * `a`  sphere radius
-
-Readhead, M. L. (2014, October). Is underwater thermal noise useful?. In Inter-Noise and Noise-Con Congress and Conference Proceedings (Vol. 249, No. 2, pp. 4978-4983). Institute of Noise Control Engineering.
 """
 function sphere(
   T::Real, # Temperature [K]
@@ -64,8 +67,6 @@ Thermal noise level averaged over the surface of a piston, with
 * `f`  frequency [Hz]
 * `df` frequency interval size [Hz]
 * `a`  piston radius
-
-Readhead, M. L. (2014, October). Is underwater thermal noise useful?. In Inter-Noise and Noise-Con Congress and Conference Proceedings (Vol. 249, No. 2, pp. 4978-4983). Institute of Noise Control Engineering.
 """
 function piston(
   T::Real, # Temperature [K]
