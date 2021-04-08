@@ -1,5 +1,5 @@
-# Simple Thermal Noise Implementation
-Implementation of equations reviewed by [Readhead 2014], in MATLAB and Julia.
+# ThermalNoise.jl
+A simple implementation of equations reviewed by [Readhead 2014], in MATLAB and Julia. Not a Julia package.
 
 Run the interactive Julia Pluto script using [Pluto-on-Binder][Binder]!
 
