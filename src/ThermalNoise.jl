@@ -17,7 +17,7 @@ pms2nl(p_ms) = 20log10(√p_ms/1e-6)
 """
 `point(T::Real, ρ::Real, c::Real, f::Real, df::Real)`
 
-Thermal noise level for a piston, derived by Mellen [Readhead 2014], with
+Thermal noise level for a point, derived by Mellen [Readhead 2014], with
 * `T`  Temperature [K]
 * `ρ`  Density [kg/m³]
 * `c`  Sound Speed [m/s]
@@ -43,7 +43,7 @@ Thermal noise level averaged over the surface of a sphere, with
 * `c`  sound tpeed [m/s]
 * `f`  frequency [Hz]
 * `df` frequency interval size [Hz]
-* `a`  sphere radius
+* `a`  sphere radius [m]
 """
 function sphere(
   T::Real, # Temperature [K]
@@ -66,7 +66,7 @@ Thermal noise level averaged over the surface of a piston, with
 * `c`  sound tpeed [m/s]
 * `f`  frequency [Hz]
 * `df` frequency interval size [Hz]
-* `a`  piston radius
+* `a`  piston radius [m]
 """
 function piston(
   T::Real, # Temperature [K]
