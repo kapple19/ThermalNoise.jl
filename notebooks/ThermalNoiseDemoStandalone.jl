@@ -86,26 +86,26 @@ pms2nl(p_ms) = 20log10(√p_ms/1e-6);
 # ╔═╡ 5acaeee8-30ef-4da6-84b6-a259e60e69cc
 md"""
 ### Point
-`point(T::Real, ρ::Real, c::Real, f::Real, df::Real)`
+`point(T, ρ, c, f, df)`
 
 Thermal noise level for a point, derived by Mellen separate from Callen & Welton, but arrived at the exact same formula [Readhead 2014].
 """
 
 # ╔═╡ 48b13d15-dd5d-4fa3-b06f-913f94531eb1
-function point(T::Real, ρ::Real, c::Real, f::Real, df::Real)
+function point(T, ρ, c, f, df)
   Nl = 4π * k_B * T * ρ * f^2 * df / c |> pms2nl
 end;
 
 # ╔═╡ 33d5a515-5c8b-482d-a0b6-c5ce24d81f70
 md"""
 ### Spherical Surface
-`sphere(T::Real, ρ::Real, c::Real, f::Real, df::Real, a::Real)`
+`sphere(T, ρ, c, f, df, a)`
 
 Thermal noise level averaged over the surface of a sphere, derived by Callen & Welton [Readhead 2014].
 """
 
 # ╔═╡ 852ac300-f8ad-4886-a4d5-a3b8c68e3e9d
-function sphere(T::Real, ρ::Real, c::Real, f::Real, df::Real, a::Real)
+function sphere(T, ρ, c, f, df, a)
   k = 2π * f / c
   NL = 4π * k_B * T * ρ * f^2 / c / (1 + (k*a)^2) * df |> pms2nl
 end;
@@ -113,13 +113,13 @@ end;
 # ╔═╡ 6e818191-c03c-41a2-a67c-ef7e665a5067
 md"""
 ### Piston Surface
-`piston(T::Real, ρ::Real, c::Real, f::Real, df::Real, a::Real)`
+`piston(T, ρ, c, f, df, a)`
 
 Thermal noise level averaged over the surface of a piston, derived by Sivian & White [Readhead 2014].
 """
 
 # ╔═╡ 4a117724-ae3e-4a61-afc5-7b8bd1db2352
-function piston(T::Real, ρ::Real, c::Real, f::Real, df::Real, a::Real)
+function piston(T, ρ, c, f, df, a)
   k = 2π * f / c
   NL = 4k_B * T * ρ * c / π / a^2 * (1 - besselj(1, 2k*a)/k/a) * df |> pms2nl
 end
@@ -143,7 +143,7 @@ md"Sound Speed: $(@bind c Slider(300.0:1600.0, default = 1520.0, show_value = tr
 @bind a′ Slider(-3:0.1:3, default = -2.0)
 
 # ╔═╡ 386c1210-9731-4382-bc54-12daba3df21e
-f = 10.0.^LinRange(1, 6, 501);
+f = 10.0.^LinRange(1, 6, 1001);
 
 # ╔═╡ 852fd43b-0052-4163-b1a8-fd840eb48d66
 T = T′ + 273.15;
@@ -169,9 +169,14 @@ begin
 		xscale = :log10,
 		legend = :topleft
 	)
-	plot!(f, f -> point(T, ρ, c, f, df), label = "Point")
-	plot!(f, f -> sphere(T, ρ, c, f, df, a), label = "Sphere")
-	plot!(f, f -> piston(T, ρ, c, f, df, a), label = "Piston")
+	
+	point_(f) = point(T, ρ, c, f, df)
+	sphere_(f) = sphere(T, ρ, c, f, df, a)
+	piston_(f) = piston(T, ρ, c, f, df, a)
+	
+	plot!(f, point_, label = "Point")
+	plot!(f, sphere_, label = "Sphere")
+	plot!(f, piston_, label = "Piston")
 end
 
 # ╔═╡ Cell order:
