@@ -21,6 +21,17 @@ begin
 	using Plots
 end
 
+# ╔═╡ b9373760-0139-495c-9405-3592ee260458
+md"""
+# Thermal Noise
+This Pluto live script utilizes a Julia implementation of three equations for thermal noise reviewed by [Readhead 2014].
+
+## References
+[Readhead, M. L. (2014, October). Is underwater thermal noise useful?. In _Inter-Noise and Noise-Con Congress and Conference Proceedings_ (Vol. 249, No. 2, pp. 4978-4983). Institute of Noise Control Engineering.](https://www.acoustics.asn.au/conference_proceedings/INTERNOISE2014/papers/p757.pdf)
+
+## Interactive Demonstration
+"""
+
 # ╔═╡ cffd7901-6801-4653-bba3-d25749683a7c
 md"Temperature: $(@bind T′ Slider(-4.0:20.0, default = 4.0, show_value = true))°C"
 
@@ -72,6 +83,7 @@ plot(
 )
 
 # ╔═╡ Cell order:
+# ╟─b9373760-0139-495c-9405-3592ee260458
 # ╟─cffd7901-6801-4653-bba3-d25749683a7c
 # ╟─36dc15bf-fb76-4bd0-b3eb-be47f867b2af
 # ╟─a1b547f9-50bf-478f-a79a-a17125a2493c
