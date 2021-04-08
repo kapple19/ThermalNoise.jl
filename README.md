@@ -2,8 +2,8 @@
 A simple implementation of equations reviewed by [Readhead 2014], in MATLAB and Julia. Not a Julia package.
 
 Run the interactive Julia Pluto script online using Binder!
-1. Go to [http://pluto-on-binder.glitch.me/]
-2. Paste in [https://github.com/kappleThales/ThermalNoise.jl/blob/master/notebooks/ThermalNoiseDemoStandalone.jl]
+1. Go to http://pluto-on-binder.glitch.me/
+2. Paste in https://github.com/kappleThales/ThermalNoise.jl/blob/master/notebooks/ThermalNoiseDemoStandalone.jl
 3. Click on the Binder URL
 
 # References
